@@ -1,6 +1,6 @@
 class BankAccount:
-    total_accounts = 0  # Class variable to track total accounts
-    all_accounts = []  # Class variable to store all accounts
+    total_accounts = 0  
+    all_accounts = []  
     
     def __init__(self, account_holder, initial_balance=0, account_type='Savings'):
         if not account_holder:
@@ -59,7 +59,6 @@ class BankAccount:
     def validate_amount(amount):
         return isinstance(amount, (int, float)) and 0 < amount <= 50000
 
-# Creating Savings and Current account subclasses
 class SavingsAccount(BankAccount):
     def __init__(self, account_holder, initial_balance=0):
         super().__init__(account_holder, initial_balance, account_type='Savings')
@@ -76,7 +75,6 @@ class CurrentAccount(BankAccount):
     def __init__(self, account_holder, initial_balance=0):
         super().__init__(account_holder, initial_balance, account_type='Current')
 
-# CLI Interface for user interaction
 def main():
     accounts = {}
     while True:
